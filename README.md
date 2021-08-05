@@ -1,2 +1,2 @@
 # AnythingButCreed
-C# Console exercise using LINQ RemoveAll on a song list.
+C# Console exercise using LINQ query expression on a song list.
