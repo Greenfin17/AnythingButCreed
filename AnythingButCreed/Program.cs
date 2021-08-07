@@ -44,22 +44,7 @@ namespace AnythingButCreed
             allSongs.ForEach(song => Console.WriteLine($"     {i++}. \"{song.Name}\" by {song.Composer}, performed by {song.Artist}"));
             Console.Write('\n');
 
-            // Non LINQ
-            /* Console.WriteLine("     Now lets remove all the songs by Creed.");
-            allSongs.ForEach(song => goodSongs.Add(song));
-            goodSongs.RemoveAll(song => song.Artist == "Creed");
-            */
-
-            // Using LINQ
-            IEnumerable<Song> songQuery =
-                from song in allSongs
-                where song.Artist != "Creed"
-                select song;
-
-            foreach(Song song in songQuery)
-            {
-                goodSongs.Add(song);
-            }
+            goodSongs= allSongs.Where(x => x.Artist != "Creed").ToList();
 
             i = 1;
             Console.WriteLine("     OK, here are the songs without Creed - \"Anything but Creed!\"\n");
